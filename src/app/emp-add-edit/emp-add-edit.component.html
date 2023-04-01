@@ -1,0 +1,78 @@
+<div mat-dialog-title>
+    <h1>Formulario de Tarea</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input matInput type="text" formControlName="apellido">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Número de Registro</mat-label>
+            <input matInput type="text" formControlName="registro">
+        </mat-form-field>
+    </div>
+
+    <div class="row" class="mat-form-field">
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="descripcion"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha que se realizó</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input matInput type="number" formControlName="precio">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <h4>Proyecto</h4>
+        <mat-form-field appearance="outline">
+            <mat-label>Proyecto</mat-label>
+            <mat-select formControlName="proyecto">
+                <mat-option *ngFor="let val of projects" [value]="val">{{val}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <h4>Tipo</h4>
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo</mat-label>
+            <mat-select formControlName="tipo">
+                <mat-option *ngFor="let val of type" [value]="val">{{val}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <h4>Categoría</h4>
+        <mat-form-field appearance="outline">
+            <mat-label>Categoría</mat-label>
+            <mat-select formControlName="categoria">
+                <mat-option *ngFor="let val of test" [value]="val">{{val}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button>Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">Confirmar</button>
+</div>
+</form>

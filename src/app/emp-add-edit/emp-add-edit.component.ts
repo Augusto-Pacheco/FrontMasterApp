@@ -31,7 +31,6 @@ export class EmpAddEditComponent {
   constructor(private _fb: FormBuilder) {
     this.empForm = this._fb.group({
       nombre: '',
-      apellido: '',
       registro: '',
       descripcion: '',
       fecha: '',

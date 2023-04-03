@@ -7,11 +7,11 @@ import { Task } from '../models/task.model';
   providedIn: 'root'
 })
 export class TasksService {
-  private readonly baseUrl = 'http://localhost:7006/api/';
+  private readonly baseUrl = 'https://localhost:7006/api/';
 
   constructor(private http: HttpClient) { }
 
   getAllTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.baseUrl + 'tasks');
+    return this.http.get<Task[]>(this.baseUrl + 'Tasks');
   }
 }

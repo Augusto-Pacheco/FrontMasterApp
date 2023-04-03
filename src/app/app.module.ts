@@ -18,13 +18,16 @@ import localeEs from '@angular/common/locales/es';
 import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TasksComponent } from './tasks/tasks.component';
 
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmpAddEditComponent
+    EmpAddEditComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,9 @@ registerLocaleData(localeEs, 'es');
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

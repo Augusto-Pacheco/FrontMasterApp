@@ -1,17 +1,17 @@
 <mat-toolbar color="primary">
     <span>My App</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button>
+    <button mat-raised-button (click)="openAddEditEmpForm()">
       Agregar Tarea
     </button>
 </mat-toolbar>
   
 <p>tasks works!</p>
 
-<nav>
+
     <ul>
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="/tasks">Tasks</a></li>
     </ul>
     <router-outlet></router-outlet>
-</nav>
+

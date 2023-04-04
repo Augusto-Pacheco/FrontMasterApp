@@ -4,6 +4,14 @@
     <button mat-raised-button>
       Agregar Tarea
     </button>
-  </mat-toolbar>
+</mat-toolbar>
+  
 <p>tasks works!</p>
-<h1>Hola</h1>
+
+<nav>
+    <ul>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="/tasks">Tasks</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+</nav>
